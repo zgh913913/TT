@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.think.toutiao.ui.ColorTrackView
+    android:id="@+id/ctv"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="60dp"
+    android:layout_height="37dp"
+    android:layout_gravity="center"
+    android:background="?selectableItemBackgroundBorderless"
+    android:minHeight="37dp"
+    android:minWidth="60dp"
+    app:direction="0"
+    app:progress="0"
+    app:text="a"
+    app:text_change_color="#F00"
+    app:text_origin_color="#000"
+    app:text_size="18sp"/>

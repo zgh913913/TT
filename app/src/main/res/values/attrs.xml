@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomBar">
+        <attr name="menu" format="reference"/>
+        <attr name="selectedTitleColor" format="color"/>
+        <attr name="unSelectedTitleColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="RectProgressView">
+        <attr name="progress" format="integer"/>
+        <attr name="color" format="color"/>
+        <attr name="strokeWidth" format="integer"/>
+        <attr name="max" format="integer"/>
+        <attr name="RectProgressViewStyle" format="enum">
+            <enum name="fill" value="0"/>
+            <enum name="stroke" value="1"/>
+            <enum name="line" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SpringView">
+        <attr name="itemType">
+            <enum name="overlap" value="0"/>
+            <enum name="follow" value="1"/>
+        </attr>
+        <attr name="give">
+            <enum name="both" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="none" value="3"/>
+        </attr>
+        <attr name="header" format="reference"/>
+        <attr name="footer" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="ColorTrackView">
+        <attr name="text" format="string"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_origin_color" format="color"/>
+        <attr name="text_change_color" format="color"/>
+        <attr name="progress_ctv" format="float"/>
+        <attr name="direction" format="integer"/>
+    </declare-styleable>
+</resources>

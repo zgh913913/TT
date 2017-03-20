@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_home"
+        android:title="首页"/>
+    <item
+        android:icon="@drawable/ic_video"
+        android:title="视频"/>
+    <item
+        android:icon="@drawable/ic_quanzi"
+        android:title="头条圈"/>
+    <item
+        android:icon="@drawable/ic_my"
+        android:title="我的"/>
+</menu>

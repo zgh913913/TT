@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/bottom_navigation_small_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="?selectableItemBackgroundBorderless"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_icon"
+        android:layout_centerHorizontal="true"
+        android:textColor="@drawable/bottom_title_color"
+        android:textSize="9sp"
+        tools:text="首页"/>
+
+    <TextView
+        android:id="@+id/item_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@mipmap/ic_launcher"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5.5dp"
+        android:paddingRight="5.5dp"
+        android:paddingTop="2dp"
+        android:text="13"
+        android:textColor="#fff"
+        android:textSize="8sp"
+        android:visibility="gone"
+        />
+</RelativeLayout>

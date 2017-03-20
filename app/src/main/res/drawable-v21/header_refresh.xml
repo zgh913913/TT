@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/header_drawable">
+
+    <target
+        android:name="path1"
+        android:animation="@animator/header_anim_1"/>
+
+    <target
+        android:name="path2"
+        android:animation="@animator/header_anim_2"/>
+    <target
+        android:name="path3"
+        android:animation="@animator/header_anim_3"/>
+    <target
+        android:name="path4"
+        android:animation="@animator/header_anim_4"/>
+    <target
+        android:name="path5"
+        android:animation="@animator/header_anim_5"/>
+    <target
+        android:name="path6"
+        android:animation="@animator/header_anim_6"/>
+    <target
+        android:name="path7"
+        android:animation="@animator/header_anim_7"/>
+</animated-vector>
