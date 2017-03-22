@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 
 import com.example.think.toutiao.db.DbHelper;
 import com.example.think.toutiao.util.common.Utils;
-import com.squareup.leakcanary.LeakCanary;
 import com.umeng.analytics.MobclickAgent;
 
 import org.greenrobot.greendao.DbUtils;
@@ -28,12 +27,6 @@ public class AppClient extends Application {
         super.onCreate();
         Utils.init(this);
         DbHelper.getInstance().setupDatabase(getApplicationContext());
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is ded  icated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
     }
 
     public static <T> Observable.Transformer<T, T> applySchedulers() {
