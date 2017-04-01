@@ -44,7 +44,7 @@ public class DefaultFooter extends BaseFooter {
     @Override
     public void onLimitDes(View rootView, boolean upORdown) {
         if (upORdown) {
-            footerTitle.setText("松开载入更多");
+            footerTitle.setText("查看更多");
         } else {
             footerTitle.setText("查看更多");
         }

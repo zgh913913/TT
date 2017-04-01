@@ -35,18 +35,23 @@ public class ContentModel implements IContentConstruct.IContentModel {
             @Override
             public void call(Subscriber<? super ContentBean> subscriber) {
                 ContentCacheDao cacheDb = DbHelper.getInstance().getCacheDao();
-                if (map.get("page").equals(0) || map.get("page").equals(1)) {
+                if (map.get("page").equals(0)) {
                     List<ContentCache> list = cacheDb.queryBuilder().list();
                     for (ContentCache content : list) {
                         content.setHasLoaded(false);
                     }
                     cacheDb.updateInTx(list);
                 }
-                ContentCache content = cacheDb.queryBuilder()
+                ContentCache content;
+                List<ContentCache> list = cacheDb.queryBuilder()
                         .where(ContentCacheDao.Properties.Category.eq(map.get("category"))
                                 , ContentCacheDao.Properties.HasLoaded.eq(false))
-                        .limit(1)
-                        .unique();
+                        .list();
+                if (list == null || list.size() == 0) {
+                    subscriber.onCompleted();
+                    return;
+                }
+                content = list.get(0);
                 if (content != null) {
                     content.setHasLoaded(true);
                     cacheDb.insertOrReplace(content);
@@ -54,7 +59,7 @@ public class ContentModel implements IContentConstruct.IContentModel {
                     ContentBean contentBean = gson.fromJson(content.data, ContentBean.class);
                     subscriber.onNext(contentBean);
                 }
-                L.e("ZHJJJJ",Thread.currentThread().getName());
+                L.e("ZHJJJJ", Thread.currentThread().getName());
                 subscriber.onCompleted();
             }
         }).subscribeOn(Schedulers.io())
@@ -72,7 +77,7 @@ public class ContentModel implements IContentConstruct.IContentModel {
                     contentCache.setData(s);
                     contentCache.setCategory(map.get("category").toString());
                     cacheDb.insert(contentCache);
-                    L.e("ZHJ",Thread.currentThread().getName());
+                    L.e("ZHJ", Thread.currentThread().getName());
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
         String ac = (String) map.get("ac");

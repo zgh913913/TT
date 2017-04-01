@@ -28,8 +28,6 @@ public class MainActivity extends BaseActivity {
     BottomBar bb;
     @BindView(R.id.flContainer)
     FrameLayout flContainer;
-    @BindView(R.id.tvSearch)
-    TextView tvSearch;
     FragmentController controller;
 
     @Override
@@ -60,18 +58,9 @@ public class MainActivity extends BaseActivity {
         return getResources().getColor(R.color.title_bar_color_1);
     }
 
-    @OnClick({R.id.tvSearch})
-    public void onclick(View view) {
-        switch (view.getId()) {
-            case R.id.tvSearch:
-                Intent intent = new Intent(this, SearchActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
 
     public void setSuggest(ContentSuggestBean contentSuggestBean) {
         String homepage_search_suggest = contentSuggestBean.homepage_search_suggest;
-        tvSearch.setText(homepage_search_suggest);
+//        tvSearch.setText(homepage_search_suggest);
     }
 }

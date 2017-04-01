@@ -138,7 +138,7 @@ public class ContentFragment extends BaseFragment<MainActivity> implements ICont
             String content = contentBean.data.get(i).content;
             ContentDetail contentDetail = gson.fromJson(content, ContentDetail.class);
             if (sv.isRefreshMore)
-                contentDetailList.add(i, contentDetail);
+                contentDetailList.add(0, contentDetail);
             else
                 contentDetailList.add(contentDetail);
         }
@@ -174,7 +174,9 @@ public class ContentFragment extends BaseFragment<MainActivity> implements ICont
 
     @Override
     public void hideLoading(int type) {
-
+        if (sv != null)
+            if (sv.isRefreshMore || sv.isLoadingMore)
+                sv.onFinishFreshAndLoad();
     }
 
     @Override

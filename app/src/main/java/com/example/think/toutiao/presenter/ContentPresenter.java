@@ -39,15 +39,22 @@ public class ContentPresenter implements IContentConstruct.IContentPresenter {
             return;
         mainView.showLoading(0);
         Subscription subscribe = mainModel.getContent(map)
-                .doOnError(throwable -> {
-                    mainView.hideLoading(0);
-                    mainView.showError(throwable);
-                })
-                .doOnCompleted(() -> {
-                    mainView.hideLoading(0);
-                })
-                .subscribe(contentBean -> {
-                    mainView.onGetContent(contentBean);
+                .subscribe(new Subscriber<ContentBean>() {
+                    @Override
+                    public void onCompleted() {
+                        mainView.hideLoading(0);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        mainView.hideLoading(0);
+                        mainView.showError(e);
+                    }
+
+                    @Override
+                    public void onNext(ContentBean contentBean) {
+                        mainView.onGetContent(contentBean);
+                    }
                 });
         subscription.add(subscribe);
     }

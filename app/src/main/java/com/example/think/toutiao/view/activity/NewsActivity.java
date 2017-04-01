@@ -112,6 +112,7 @@ public class NewsActivity extends BaseActivity {
         settings.setSupportZoom(true);//是否可以缩放，默认true
         // settings.setUserAgentString("User-Agent:Android");//设置用户代理，一般不用
         //err_unknown_url_scheme
+        settings.setAppCacheEnabled(true);
         wv.setWebChromeClient(new WebChromeClient());
         wv.setWebViewClient(new WebViewClient() {
             @Override

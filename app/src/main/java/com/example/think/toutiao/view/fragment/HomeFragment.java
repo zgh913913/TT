@@ -1,11 +1,14 @@
 package com.example.think.toutiao.view.fragment;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.think.toutiao.R;
 import com.example.think.toutiao.base.BaseFragment;
@@ -13,16 +16,17 @@ import com.example.think.toutiao.construct.IHomeConstruct;
 import com.example.think.toutiao.model.bean.HomeTitleBean;
 import com.example.think.toutiao.presenter.HomePresenter;
 import com.example.think.toutiao.ui.ColorTrackView;
+import com.example.think.toutiao.util.common.BarUtils;
 import com.example.think.toutiao.util.common.SizeUtils;
-import com.example.think.toutiao.util.event.FlushContentFragmentEvent;
-import com.example.think.toutiao.util.event.RxBus;
 import com.example.think.toutiao.view.activity.MainActivity;
+import com.example.think.toutiao.view.activity.SearchActivity;
 import com.example.think.toutiao.view.adapter.ContentViewPagerAdapter;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rx.Observable;
 
 /**
@@ -36,6 +40,9 @@ public class HomeFragment extends BaseFragment<MainActivity> implements IHomeCon
     HorizontalScrollView hsv;
     @BindView(R.id.indicatorContainer)
     LinearLayout indicatorContainer;
+    @BindView(R.id.tvSearch)
+    TextView tvSearch;
+
     private ArrayList<BaseFragment> mFragments;
     private ContentViewPagerAdapter viewPagerAdapter;
     private IHomeConstruct.IHomePresenter homePresenter;
@@ -44,7 +51,7 @@ public class HomeFragment extends BaseFragment<MainActivity> implements IHomeCon
     protected void initView() {
         homePresenter = new HomePresenter();
         homePresenter.attachView(this);
-
+//        BarUtils.setColor(mActivity,0x00000000);
 //        final List<String> titles = new ArrayList<>();
 //        titles.add("推荐");
 //        titles.add("军事");
@@ -136,6 +143,14 @@ public class HomeFragment extends BaseFragment<MainActivity> implements IHomeCon
         });
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            BarUtils.setColor(mActivity,getResources().getColor(R.color.title_bar_color_1));
+        }
+    }
+
     public int currentPage;
 
     @Override
@@ -206,5 +221,15 @@ public class HomeFragment extends BaseFragment<MainActivity> implements IHomeCon
     @Override
     public void hideLoading(int type) {
 
+    }
+
+    @OnClick({R.id.tvSearch})
+    public void onclick(View view) {
+        switch (view.getId()) {
+            case R.id.tvSearch:
+                Intent intent = new Intent(mActivity, SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

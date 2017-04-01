@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/transparent"
+              android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/tool_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="64.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/my_page_favorite_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="aaa"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_night_mode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/my_page_nightmode_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="bbb"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/my_page_settings_selector"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:text="ccc"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/horizontal_divider_one"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:background="#000"
+        />
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/layout_my_page_pgc"-->
+    <!--style="@style/my_page_item_root">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txt_my_page_pgc_name"-->
+    <!--style="@style/my_page_item_tv"-->
+    <!--android:text="@string/mine_item_pgc" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_my_page_pgc_right_arrow"-->
+    <!--style="@style/my_page_item_right_arrow" />-->
+
+    <!--<View-->
+    <!--android:id="@+id/my_page_pgc_divider"-->
+    <!--style="@style/my_page_item_divider"-->
+    <!--android:layout_alignParentBottom="true" />-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/layout_my_page_message"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+
+        <TextView
+            android:id="@+id/txt_my_page_message"
+            style="@style/my_page_item_tv"
+            android:text="III"
+            android:textColor="#CCC"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_my_page_message_right_arrow"
+            style="@style/my_page_item_right_arrow"/>
+
+        <View
+            android:id="@+id/my_page_message_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ccc"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_my_page_offline"
+        style="@style/my_page_item_root"
+        >
+
+        <TextView
+            android:id="@+id/txt_my_page_offline"
+            style="@style/my_page_item_tv"
+            android:text="hhh"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/txt_my_page_offline_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9.0dip"
+            android:layout_toLeftOf="@+id/img_my_page_offline_right_arrow"
+            android:textColor="#000"
+            android:textSize="14.0sp"/>
+
+        <ImageView
+            android:id="@+id/img_my_page_offline_right_arrow"
+            style="@style/my_page_item_right_arrow"/>
+
+        <View
+            android:id="@+id/my_page_offline_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_my_page_activity"
+        style="@style/my_page_item_root"
+        >
+
+        <TextView
+            android:id="@+id/txt_my_page_activity"
+            style="@style/my_page_item_tv"
+            android:text="GGG"
+            android:textColor="#ccc"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_my_page_activity_right_arrow"
+            style="@style/my_page_item_right_arrow"/>
+
+        <View
+            android:id="@+id/my_page_activity_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#CCC"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_my_page_sell"
+        style="@style/my_page_item_root"
+        >
+
+        <TextView
+            android:id="@+id/txt_my_page_sell"
+            style="@style/my_page_item_tv"
+            android:text="FFF"
+            android:textColor="#000"
+            />
+
+        <ImageView
+            android:id="@+id/img_my_page_sell_right_arrow"
+            style="@style/my_page_item_right_arrow"/>
+
+        <View
+            android:id="@+id/my_page_sell_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#CCC"
+            />
+
+        <TextView
+            android:id="@+id/txt_my_page_sell_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5.0dip"
+            android:layout_toLeftOf="@+id/img_my_page_sell_right_arrow"
+            android:text="eee"
+            android:textColor="#000"
+            android:textSize="12.0sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_dynamic"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+
+    <!--<View-->
+    <!--android:id="@+id/horizontal_divider_three"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="15.0dip"-->
+    <!--android:background="@color/ssxinmian4"/>-->
+</LinearLayout>

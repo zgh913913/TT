@@ -32,7 +32,7 @@ public class GlideUtils {
 
     //默认加载
     public static void loadImageView(Fragment fragment, String path, ImageView mImageView) {
-        Glide.with(fragment).load(path).dontAnimate().into(mImageView);
+        Glide.with(fragment).load(path).into(mImageView);
     }
 
     //加载指定大小
