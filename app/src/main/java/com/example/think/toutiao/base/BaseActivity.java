@@ -17,7 +17,7 @@ import butterknife.Unbinder;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
+//abc  初始化
 
 
 
