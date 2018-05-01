@@ -67,4 +67,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
+    //修改bug
 }
