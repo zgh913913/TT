@@ -19,6 +19,8 @@ import butterknife.Unbinder;
 public abstract class BaseActivity extends AppCompatActivity {
 
 
+
+
     private Unbinder binder;
 
     @Override
